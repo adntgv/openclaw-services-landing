@@ -372,6 +372,7 @@ section {
     border: 1px solid var(--border);
     transition: all 0.3s ease;
     position: relative;
+    min-width: 0;
 }
 
 .service-card:hover {
@@ -472,6 +473,7 @@ section {
     border: 2px solid var(--border);
     transition: all 0.3s ease;
     position: relative;
+    min-width: 0;
 }
 
 .pricing-card:hover {
@@ -509,6 +511,8 @@ section {
     font-size: 2.5rem;
     font-weight: 900;
     color: var(--primary);
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
 
 .price-currency {
@@ -601,6 +605,7 @@ section {
     position: relative;
     min-height: 420px;
     color: white;
+    min-width: 0;
 }
 
 .case-card:hover {
