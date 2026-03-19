@@ -966,6 +966,11 @@ summary.faq-question::after {
     padding: 0 2rem 1.5rem;
 }
 
+/* FAB — hidden by default, shown on mobile */
+.fab {
+    display: none;
+}
+
 /* Responsive Design */
 @media (max-width: 968px) {
     .hero-content {
@@ -1111,5 +1116,34 @@ summary.faq-question::after {
 
     .case-content {
         min-height: 320px;
+    }
+
+    .fab {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        bottom: 1.5rem;
+        right: 1.5rem;
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        color: white;
+        box-shadow: 0 4px 16px rgba(108, 92, 231, 0.5);
+        text-decoration: none;
+        z-index: 999;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .fab:hover,
+    .fab:focus {
+        transform: scale(1.1);
+        box-shadow: 0 6px 24px rgba(108, 92, 231, 0.65);
+    }
+
+    .fab:focus {
+        outline: 3px solid white;
+        outline-offset: 2px;
     }
 }
