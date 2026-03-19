@@ -19,15 +19,18 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="preload" as="image" href="./images/hero.png">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236c5ce7' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M8 4 C6 7 6 12 8 16 L9 19'/><path d='M12 3 C10 7 10 13 12 17 L12 20'/><path d='M16 4 C14 7 14 12 16 16 L15 19'/></svg>">
 </head>
 <body>
+    <a href="#services" class="skip-to-content">Перейти к основному содержанию</a>
     <!-- Navigation -->
     <nav class="nav">
         <div class="container">
             <div class="nav-content">
                 <div class="logo">
-                    <svg class="logo-svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg class="logo-svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="OpenClaw">
                         <path d="M8 4 C6 7 6 12 8 16 L9 19"/>
                         <path d="M12 3 C10 7 10 13 12 17 L12 20"/>
                         <path d="M16 4 C14 7 14 12 16 16 L15 19"/>
@@ -40,7 +43,7 @@
                     <li><a href="#cases">Кейсы</a></li>
                     <li><a href="#contact" class="cta-button">Связаться</a></li>
                 </ul>
-                <button class="mobile-menu-toggle" aria-label="Toggle menu">☰</button>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
             </div>
         </div>
     </nav>
@@ -64,6 +67,7 @@
                         <a href="#contact" class="button button-primary">Получить консультацию</a>
                         <a href="#cases" class="button button-secondary">Посмотреть кейсы</a>
                     </div>
+                    <p class="hero-guarantee">✅ Гарантия результата — возврат 50% при отсутствии эффекта</p>
                     <div class="hero-stats">
                         <div class="stat">
                             <div class="stat-number">от 1 нед.</div>
@@ -80,7 +84,7 @@
                     </div>
                 </div>
                 <div class="hero-image">
-                    <img src="./images/hero.png" alt="AI Automation Illustration" loading="lazy">
+                    <img src="./images/hero.png" alt="AI Automation Illustration" width="1024" height="1024" fetchpriority="high">
                 </div>
             </div>
         </div>
@@ -99,7 +103,7 @@
             <div class="services-grid">
                 <!-- Service 1 -->
                 <div class="service-card">
-                    <div class="service-icon">📱</div>
+                    <div class="service-icon" aria-hidden="true">📱</div>
                     <h3 class="service-title">WhatsApp Business</h3>
                     <p class="service-description">
                         Настройка надёжного процесса рассылки через WhatsApp Business.
@@ -117,7 +121,7 @@
                 <!-- Service 2 -->
                 <div class="service-card featured">
                     <div class="badge">Популярно</div>
-                    <div class="service-icon">🗺️</div>
+                    <div class="service-icon" aria-hidden="true">🗺️</div>
                     <h3 class="service-title">Парсер 2GIS</h3>
                     <p class="service-description">
                         Автоматический сбор контактов компаний из 2GIS по вашим критериям.
@@ -134,7 +138,7 @@
 
                 <!-- Service 3 -->
                 <div class="service-card">
-                    <div class="service-icon">🤖</div>
+                    <div class="service-icon" aria-hidden="true">🤖</div>
                     <h3 class="service-title">Telegram Боты</h3>
                     <p class="service-description">
                         Боты, которые берут на себя рутинные запросы: уведомления,
@@ -151,7 +155,7 @@
 
                 <!-- Service 4 -->
                 <div class="service-card">
-                    <div class="service-icon">🌐</div>
+                    <div class="service-icon" aria-hidden="true">🌐</div>
                     <h3 class="service-title">Браузерная Автоматизация</h3>
                     <p class="service-description">
                         Автоматизация сложных веб-действий: заполнение форм, сбор данных,
@@ -168,7 +172,7 @@
 
                 <!-- Service 5 -->
                 <div class="service-card">
-                    <div class="service-icon">🎯</div>
+                    <div class="service-icon" aria-hidden="true">🎯</div>
                     <h3 class="service-title">OpenClaw "Под Ключ"</h3>
                     <p class="service-description">
                         Персональный AI-ассистент для вашего бизнеса — отвечает на вопросы,
@@ -185,7 +189,7 @@
 
                 <!-- Service 6 -->
                 <div class="service-card">
-                    <div class="service-icon">✍️</div>
+                    <div class="service-icon" aria-hidden="true">✍️</div>
                     <h3 class="service-title">Контент-Автоматизация</h3>
                     <p class="service-description">
                         AI генерирует и публикует контент для вашего Telegram-канала
@@ -215,7 +219,7 @@
 
             <div class="audience-grid">
                 <div class="audience-card">
-                    <div class="audience-icon">💼</div>
+                    <div class="audience-icon" aria-hidden="true">💼</div>
                     <h3 class="audience-title">Отделам продаж</h3>
                     <p class="audience-description">
                         Собираем базу лидов и настраиваем рассылки, чтобы менеджеры занимались
@@ -224,7 +228,7 @@
                 </div>
 
                 <div class="audience-card">
-                    <div class="audience-icon">🏢</div>
+                    <div class="audience-icon" aria-hidden="true">🏢</div>
                     <h3 class="audience-title">Сервисному бизнесу</h3>
                     <p class="audience-description">
                         Боты принимают заявки, напоминают о записях и отвечают на типовые вопросы —
@@ -233,7 +237,7 @@
                 </div>
 
                 <div class="audience-card">
-                    <div class="audience-icon">📣</div>
+                    <div class="audience-icon" aria-hidden="true">📣</div>
                     <h3 class="audience-title">Маркетингу и контент-командам</h3>
                     <p class="audience-description">
                         Автоматизируем публикации, генерацию постов и мониторинг —
@@ -242,7 +246,7 @@
                 </div>
 
                 <div class="audience-card">
-                    <div class="audience-icon">⚙️</div>
+                    <div class="audience-icon" aria-hidden="true">⚙️</div>
                     <h3 class="audience-title">Операционным командам</h3>
                     <p class="audience-description">
                         Уведомления, сбор данных, заполнение форм и отчётность —
@@ -333,7 +337,7 @@
 
             <!-- Guarantee -->
             <div class="guarantee">
-                <div class="guarantee-icon">✅</div>
+                <div class="guarantee-icon" aria-hidden="true">✅</div>
                 <div class="guarantee-content">
                     <h3 class="guarantee-title">Работаем на результат</h3>
                     <p class="guarantee-text">
@@ -360,7 +364,7 @@
                 <!-- Case 1 -->
                 <div class="case-card">
                     <div class="case-image">
-                        <img src="./images/case-iftar.png" alt="Iftar Coordinator Bot" loading="lazy">
+                        <img src="./images/case-iftar.png" alt="Iftar Coordinator Bot" loading="lazy" width="1024" height="1024">
                     </div>
                     <div class="case-content">
                         <h3 class="case-title">Координатор ифтаров</h3>
@@ -390,7 +394,7 @@
                 <!-- Case 2 -->
                 <div class="case-card">
                     <div class="case-image">
-                        <img src="./images/case-whatsapp.png" alt="WhatsApp Automation" loading="lazy">
+                        <img src="./images/case-whatsapp.png" alt="WhatsApp Automation" loading="lazy" width="1024" height="1024">
                     </div>
                     <div class="case-content">
                         <h3 class="case-title">WhatsApp-рассылки для клиентской базы</h3>
@@ -420,7 +424,7 @@
                 <!-- Case 3 -->
                 <div class="case-card">
                     <div class="case-image">
-                        <img src="./images/case-2gis.png" alt="2GIS Lead Scraper" loading="lazy">
+                        <img src="./images/case-2gis.png" alt="2GIS Lead Scraper" loading="lazy" width="1024" height="1024">
                     </div>
                     <div class="case-content">
                         <h3 class="case-title">База лидов для B2B-продаж</h3>
@@ -450,7 +454,7 @@
                 <!-- Case 4 -->
                 <div class="case-card">
                     <div class="case-image">
-                        <img src="./images/case-blog.png" alt="Autonomous Blog" loading="lazy">
+                        <img src="./images/case-blog.png" alt="Autonomous Blog" loading="lazy" width="1024" height="1024">
                     </div>
                     <div class="case-content">
                         <h3 class="case-title">Автономный Telegram-канал</h3>
@@ -511,40 +515,40 @@
             </div>
 
             <div class="faq-grid">
-                <div class="faq-item">
-                    <div class="faq-question">Сколько занимает запуск?</div>
+                <details class="faq-item" open>
+                    <summary class="faq-question">Сколько занимает запуск?</summary>
                     <div class="faq-answer">
                         Большинство решений запускаются за 1–2 недели. Сложные проекты с несколькими
                         интеграциями — до 4 недель. Сроки обговариваем до старта и фиксируем в договорённостях.
                     </div>
-                </div>
+                </details>
 
-                <div class="faq-item">
-                    <div class="faq-question">Можно ли начать с одной задачи?</div>
+                <details class="faq-item">
+                    <summary class="faq-question">Можно ли начать с одной задачи?</summary>
                     <div class="faq-answer">
                         Да. Базовый пакет — это ровно одна автоматизация. Хорошая точка входа,
                         чтобы убедиться в подходе до расширения. Многие клиенты начинали с парсера лидов
                         или одного бота и потом добавляли остальное.
                     </div>
-                </div>
+                </details>
 
-                <div class="faq-item">
-                    <div class="faq-question">Вы помогаете после запуска?</div>
+                <details class="faq-item">
+                    <summary class="faq-question">Вы помогаете после запуска?</summary>
                     <div class="faq-answer">
                         Да, все пакеты включают период поддержки — от 14 до 90 дней.
                         Если что-то перестало работать или нужно небольшое изменение —
                         решаю в рамках поддержки без дополнительной оплаты.
                     </div>
-                </div>
+                </details>
 
-                <div class="faq-item">
-                    <div class="faq-question">Нужны ли доступы к моим системам?</div>
+                <details class="faq-item">
+                    <summary class="faq-question">Нужны ли доступы к моим системам?</summary>
                     <div class="faq-answer">
                         Зависит от задачи. Для интеграции с CRM или вашим сервисом — да, нужны API-ключи
                         или доступ к тестовой среде. Для парсинга и рассылок — нет.
                         Обговариваем конкретный список на консультации.
                     </div>
-                </div>
+                </details>
             </div>
         </div>
     </section>
@@ -562,7 +566,7 @@
 
                     <div class="contact-methods">
                         <a href="https://t.me/adntgv" class="contact-method" target="_blank">
-                            <div class="method-icon">📱</div>
+                            <div class="method-icon" aria-hidden="true">📱</div>
                             <div class="method-details">
                                 <div class="method-title">Telegram</div>
                                 <div class="method-value">@adntgv</div>
@@ -570,7 +574,7 @@
                         </a>
 
                         <div class="contact-method">
-                            <div class="method-icon">📧</div>
+                            <div class="method-icon" aria-hidden="true">📧</div>
                             <div class="method-details">
                                 <div class="method-title">Email</div>
                                 <div class="method-value">aidyn.torgayev@gmail.com</div>
@@ -578,7 +582,7 @@
                         </div>
 
                         <div class="contact-method">
-                            <div class="method-icon">🌐</div>
+                            <div class="method-icon" aria-hidden="true">🌐</div>
                             <div class="method-details">
                                 <div class="method-title">Блог</div>
                                 <div class="method-value">t.me/aidyns_claw</div>
@@ -645,7 +649,7 @@
             <div class="footer-content">
                 <div class="footer-brand">
                     <div class="logo">
-                        <svg class="logo-svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg class="logo-svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="OpenClaw">
                             <path d="M8 4 C6 7 6 12 8 16 L9 19"/>
                             <path d="M12 3 C10 7 10 13 12 17 L12 20"/>
                             <path d="M16 4 C14 7 14 12 16 16 L15 19"/>
@@ -691,11 +695,11 @@
 
             <div class="footer-bottom">
                 <p>&copy; 2026 OpenClaw Services by Aidyn Torgayev. Все права защищены.</p>
-                <p class="footer-location">🇰🇿 Астана, Казахстан</p>
+                <p class="footer-location"><span aria-hidden="true">🇰🇿</span> Астана, Казахстан</p>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>

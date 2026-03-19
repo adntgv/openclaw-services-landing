@@ -5,24 +5,37 @@
     box-sizing: border-box;
 }
 
+.skip-to-content {
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0 0 0.5rem 0.5rem;
+    z-index: 10001;
+    font-weight: 600;
+    text-decoration: none;
+    transition: top 0.2s ease;
+}
+.skip-to-content:focus { top: 0; }
+
 :root {
     --primary: #6c5ce7;
-    --primary-dark: #5a4bd1;
     --secondary: #8b5cf6;
     --accent: #a78bfa;
     --text-dark: #0f172a;
     --text-gray: #475569;
-    --text-light: #64748b;
+    --text-light: #556373;
     --bg-light: #f8fafc;
     --bg-white: #ffffff;
     --border: #e2e8f0;
     --success: #48bb78;
-    --warning: #ed8936;
     --hero-dark: #0f0a2e;
     --hero-mid: #1a1145;
 
     --gradient-primary: linear-gradient(135deg, #0f0a2e 0%, #1a1145 40%, #2d1b69 70%, #6c5ce7 100%);
-    --gradient-accent: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 100%);
 
     --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
     --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.07);
@@ -166,7 +179,27 @@ body {
 .hero-cta {
     display: flex;
     gap: 1rem;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero-cta .button-primary {
+    padding: 1rem 2.5rem;
+    font-size: 1.125rem;
+    font-weight: 700;
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.25);
+}
+
+.hero-cta .button-secondary {
+    padding: 1rem 1.5rem;
+    font-size: 0.95rem;
+    border-color: rgba(255, 255, 255, 0.4);
+    font-weight: 500;
+}
+
+.hero-guarantee {
+    font-size: 0.95rem;
+    opacity: 0.9;
+    margin-bottom: 1rem;
 }
 
 .hero-stats {
@@ -476,8 +509,9 @@ section {
 }
 
 .pricing-features li.disabled {
-    color: var(--text-light);
-    opacity: 0.5;
+    color: #6b7280;
+    text-decoration: line-through;
+    text-decoration-color: #9ca3af;
 }
 
 .guarantee {
@@ -893,21 +927,43 @@ section {
 
 .faq-item {
     background: white;
-    padding: 2rem;
     border-radius: 0.875rem;
     border: 1px solid var(--border);
+    overflow: hidden;
 }
 
-.faq-question {
+summary.faq-question {
     font-size: 1.125rem;
     font-weight: 700;
-    margin-bottom: 0.75rem;
     color: var(--text-dark);
+    padding: 1.5rem 2rem;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+summary.faq-question::-webkit-details-marker {
+    display: none;
+}
+
+summary.faq-question::after {
+    content: '+';
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--primary);
+    flex-shrink: 0;
+}
+
+.faq-item[open] summary.faq-question::after {
+    content: '−';
 }
 
 .faq-answer {
     color: var(--text-gray);
     line-height: 1.7;
+    padding: 0 2rem 1.5rem;
 }
 
 /* Responsive Design */
@@ -942,6 +998,57 @@ section {
     }
 }
 
+/* Nav active state (moved from script.js) */
+.nav-links a.active {
+    color: var(--primary);
+    position: relative;
+}
+
+.nav-links a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--primary);
+}
+
+/* Notification (moved from script.js) */
+.notification {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    background: #48bb78;
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    z-index: 10000;
+    animation: slideIn 0.3s ease-out;
+}
+
+.notification-content {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.notification-icon {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(400px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideOut {
+    from { transform: translateX(0); opacity: 1; }
+    to { transform: translateX(400px); opacity: 0; }
+}
+
 @media (max-width: 768px) {
     .nav-links {
         display: none;
@@ -949,6 +1056,20 @@ section {
 
     .mobile-menu-toggle {
         display: block;
+        min-width: 44px;
+        min-height: 44px;
+    }
+
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        padding: 1rem;
     }
 
     .hero {

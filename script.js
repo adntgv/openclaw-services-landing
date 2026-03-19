@@ -6,6 +6,7 @@ if (mobileMenuToggle) {
     mobileMenuToggle.addEventListener('click', () => {
         navLinks.classList.toggle('active');
         mobileMenuToggle.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+        mobileMenuToggle.setAttribute('aria-expanded', navLinks.classList.contains('active'));
     });
 }
 
@@ -15,6 +16,7 @@ document.querySelectorAll('.nav-links a').forEach(link => {
         if (navLinks.classList.contains('active')) {
             navLinks.classList.remove('active');
             mobileMenuToggle.textContent = '☰';
+            mobileMenuToggle.setAttribute('aria-expanded', 'false');
         }
     });
 });
@@ -117,61 +119,6 @@ function showSuccess(message) {
         </div>
     `;
     
-    // Add styles
-    const style = document.createElement('style');
-    style.textContent = `
-        .notification {
-            position: fixed;
-            top: 100px;
-            right: 20px;
-            background: #48bb78;
-            color: white;
-            padding: 1rem 1.5rem;
-            border-radius: 0.5rem;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            z-index: 10000;
-            animation: slideIn 0.3s ease-out;
-        }
-        
-        .notification-content {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-        
-        .notification-icon {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-        
-        @keyframes slideIn {
-            from {
-                transform: translateX(400px);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-        
-        @keyframes slideOut {
-            from {
-                transform: translateX(0);
-                opacity: 1;
-            }
-            to {
-                transform: translateX(400px);
-                opacity: 0;
-            }
-        }
-    `;
-    
-    if (!document.querySelector('style[data-notification]')) {
-        style.setAttribute('data-notification', '');
-        document.head.appendChild(style);
-    }
-    
     document.body.appendChild(notification);
     
     // Remove after 5 seconds
@@ -209,56 +156,30 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Add active state to navigation based on scroll position
+let scrollTicking = false;
 window.addEventListener('scroll', () => {
-    const sections = document.querySelectorAll('section[id]');
-    const scrollY = window.pageYOffset;
-    
-    sections.forEach(section => {
-        const sectionHeight = section.offsetHeight;
-        const sectionTop = section.offsetTop - 100;
-        const sectionId = section.getAttribute('id');
-        const navLink = document.querySelector(`.nav-links a[href="#${sectionId}"]`);
-        
-        if (navLink) {
-            if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-                navLink.classList.add('active');
-            } else {
-                navLink.classList.remove('active');
-            }
-        }
-    });
+    if (!scrollTicking) {
+        window.requestAnimationFrame(() => {
+            const sections = document.querySelectorAll('section[id]');
+            const scrollY = window.pageYOffset;
+
+            sections.forEach(section => {
+                const sectionHeight = section.offsetHeight;
+                const sectionTop = section.offsetTop - 100;
+                const sectionId = section.getAttribute('id');
+                const navLink = document.querySelector(`.nav-links a[href="#${sectionId}"]`);
+
+                if (navLink) {
+                    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                        navLink.classList.add('active');
+                    } else {
+                        navLink.classList.remove('active');
+                    }
+                }
+            });
+            scrollTicking = false;
+        });
+        scrollTicking = true;
+    }
 });
 
-// Add active class styling
-const navStyle = document.createElement('style');
-navStyle.textContent = `
-    .nav-links a.active {
-        color: var(--primary);
-        position: relative;
-    }
-    
-    .nav-links a.active::after {
-        content: '';
-        position: absolute;
-        bottom: -5px;
-        left: 0;
-        right: 0;
-        height: 2px;
-        background: var(--primary);
-    }
-    
-    @media (max-width: 768px) {
-        .nav-links.active {
-            display: flex;
-            flex-direction: column;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            background: white;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            padding: 1rem;
-        }
-    }
-`;
-document.head.appendChild(navStyle);
