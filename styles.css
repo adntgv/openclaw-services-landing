@@ -45,6 +45,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -53,7 +54,6 @@ body {
     line-height: 1.6;
     color: var(--text-dark);
     background: var(--bg-white);
-    overflow-x: hidden;
 }
 
 .container {
@@ -1139,9 +1139,6 @@ summary.faq-question::after {
 
     .pricing-grid {
         grid-template-columns: 1fr;
-        max-width: 480px;
-        margin-left: auto;
-        margin-right: auto;
         margin-bottom: 3rem;
     }
 
