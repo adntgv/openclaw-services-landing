@@ -198,7 +198,7 @@ const observer = new IntersectionObserver((entries) => {
 
 // Observe service cards, case cards, pricing cards
 document.addEventListener('DOMContentLoaded', () => {
-    const animatedElements = document.querySelectorAll('.service-card, .case-card, .pricing-card');
+    const animatedElements = document.querySelectorAll('.service-card, .case-card, .pricing-card, .audience-card, .trust-item, .faq-item');
     
     animatedElements.forEach(el => {
         el.style.opacity = '0';

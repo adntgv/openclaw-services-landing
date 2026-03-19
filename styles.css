@@ -803,6 +803,113 @@ section {
     margin-top: 0.5rem;
 }
 
+/* Audience Section */
+.audience {
+    background: var(--bg-white);
+}
+
+.audience-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.audience-card {
+    padding: 2.25rem;
+    border-radius: 0.875rem;
+    border: 1px solid var(--border);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.audience-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.audience-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.audience-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: var(--text-dark);
+}
+
+.audience-description {
+    color: var(--text-gray);
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+/* Trust Section */
+.trust {
+    background: var(--bg-white);
+}
+
+.trust-list {
+    max-width: 700px;
+    margin: 0 auto;
+    list-style: none;
+}
+
+.trust-item {
+    padding: 1rem 0;
+    padding-left: 2rem;
+    position: relative;
+    color: var(--text-gray);
+    font-size: 1.125rem;
+    line-height: 1.7;
+    border-bottom: 1px solid var(--border);
+}
+
+.trust-item:last-child {
+    border-bottom: none;
+}
+
+.trust-item::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-weight: bold;
+}
+
+/* FAQ Section */
+.faq {
+    background: var(--bg-light);
+}
+
+.faq-grid {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.faq-item {
+    background: white;
+    padding: 2rem;
+    border-radius: 0.875rem;
+    border: 1px solid var(--border);
+}
+
+.faq-question {
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: var(--text-dark);
+}
+
+.faq-answer {
+    color: var(--text-gray);
+    line-height: 1.7;
+}
+
 /* Responsive Design */
 @media (max-width: 968px) {
     .hero-content {
@@ -816,6 +923,10 @@ section {
     .services-grid,
     .cases-grid {
         grid-template-columns: 1fr;
+    }
+
+    .audience-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .contact-content {
@@ -867,6 +978,10 @@ section {
 
     .pricing-card.featured {
         transform: none;
+    }
+
+    .audience-grid {
+        grid-template-columns: 1fr;
     }
 
     .case-card {
