@@ -67,32 +67,17 @@ if (contactForm) {
 ${data.message}
         `.trim();
         
-        try {
-            // Send to Telegram via bridge API (if available)
-            const response = await fetch('http://127.0.0.1:18800/send', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': 'Bearer X_K6rjUFN1YGNUHXWxRWlA1iCNwrD1sGoYD_OMQNMKM'
-                },
-                body: JSON.stringify({
-                    chat_id: '6454712844', // Aidyn's Telegram ID
-                    text: telegramMessage
-                })
-            });
-            
-            if (response.ok) {
-                showSuccess('Запрос отправлен! Ответим в течение 24 часов.');
-                contactForm.reset();
-            } else {
-                throw new Error('API error');
-            }
-        } catch (error) {
-            // Fallback: open Telegram with pre-filled message
-            const telegramUrl = `https://t.me/adntgv?text=${encodeURIComponent(telegramMessage)}`;
-            window.open(telegramUrl, '_blank');
-            showSuccess('Открыли Telegram. Отправьте сообщение для связи.');
-        }
+        // Open Telegram with pre-filled message
+        const telegramUrl = `https://t.me/adntgv?text=${encodeURIComponent(telegramMessage)}`;
+        window.open(telegramUrl, '_blank');
+        
+        // Show success notification
+        showSuccess('Открыли Telegram. Отправьте сообщение для связи.');
+        
+        // Reset form after a short delay
+        setTimeout(() => {
+            contactForm.reset();
+        }, 500);
     });
 }
 
