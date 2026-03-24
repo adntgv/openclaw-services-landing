@@ -1281,6 +1281,9 @@ summary.faq-question::after {
     .nav-links a.cta-button {
         margin-top: 0.5rem;
         text-align: center;
+        background: white !important;
+        color: var(--primary) !important;
+        border: 2px solid var(--primary) !important;
     }
 
     .mobile-menu-toggle {
