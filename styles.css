@@ -482,6 +482,8 @@ section {
     transition: all 0.3s ease;
     position: relative;
     min-width: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 .pricing-card:hover {
@@ -626,6 +628,10 @@ section {
 .pricing-features li.disabled::before {
     content: '–';
     color: #d1d5db;
+}
+
+.pricing-card > .button {
+    margin-top: auto;
 }
 
 .guarantee {
