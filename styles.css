@@ -1291,20 +1291,23 @@ summary.faq-question::after {
     }
 
     .hero {
-        padding: 5.5rem 0 3rem;
+        padding: 5.5rem 0 2rem;
     }
 
     .hero-title {
-        font-size: 2rem;
+        font-size: 1.75rem;
         line-height: 1.1;
+        margin-bottom: 1rem;
     }
 
     .hero-subtitle {
-        font-size: 1rem;
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
     }
 
     .hero-cta {
         flex-direction: column;
+        margin-bottom: 1.5rem;
     }
 
     .hero-cta .button,
@@ -1312,15 +1315,27 @@ summary.faq-question::after {
     .hero-cta .button-secondary {
         width: 100%;
         text-align: center;
+        padding: 0.875rem 1.5rem;
+        font-size: 1rem;
     }
 
     .hero-stats {
-        gap: 1.5rem;
-        padding-top: 1.5rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        padding-top: 1rem;
+    }
+    
+    .hero-stats .stat:last-child {
+        grid-column: 1 / -1;
     }
 
     .stat-number {
-        font-size: 1.75rem;
+        font-size: 1.5rem;
+    }
+    
+    .stat-label {
+        font-size: 0.8rem;
     }
 
     section {
