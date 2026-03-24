@@ -155,10 +155,14 @@ body {
 
 .hero-content {
     position: relative;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    display: flex;
+    justify-content: center;
     align-items: center;
+}
+
+.hero-text {
+    max-width: 800px;
+    text-align: center;
 }
 
 .hero-title {
@@ -185,8 +189,9 @@ body {
 .hero-cta {
     display: flex;
     gap: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .hero-cta .button-primary {
@@ -223,6 +228,7 @@ body {
     border-top: 1px solid rgba(255, 255, 255, 0.15);
     padding-top: 2rem;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .stat {
@@ -242,7 +248,7 @@ body {
 }
 
 .hero-image {
-    position: relative;
+    display: none;
 }
 
 .hero-image::before {
@@ -315,18 +321,20 @@ body {
 }
 
 .cta-button {
-    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-    color: white;
+    background: white;
+    color: var(--primary);
     padding: 0.75rem 1.5rem;
     border-radius: 2rem;
     font-weight: 600;
     font-size: 0.9rem;
     text-decoration: none;
+    border: 2px solid white;
 }
 
 .cta-button:hover {
     transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-lg);
+    background: rgba(255, 255, 255, 0.95);
 }
 
 /* Section Styles */
@@ -693,7 +701,7 @@ section {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.88) 0%, rgba(0, 0, 0, 0.15) 60%, transparent 100%);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.75) 50%, rgba(0, 0, 0, 0.4) 100%);
 }
 
 .case-content {
