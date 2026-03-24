@@ -1359,11 +1359,34 @@ summary.faq-question::after {
     }
 
     .cases-grid {
-        grid-template-columns: 1fr;
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 1rem;
+        padding-bottom: 1rem;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .cases-grid::-webkit-scrollbar {
+        height: 8px;
+    }
+    
+    .cases-grid::-webkit-scrollbar-track {
+        background: var(--bg-light);
+        border-radius: 4px;
+    }
+    
+    .cases-grid::-webkit-scrollbar-thumb {
+        background: var(--primary);
+        border-radius: 4px;
     }
 
     .case-card {
         min-height: 360px;
+        min-width: 280px;
+        max-width: 280px;
+        flex-shrink: 0;
+        scroll-snap-align: start;
     }
 
     .case-content {
