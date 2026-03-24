@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Гибридная Модель Ценообразования — OpenClaw Services</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #0f172a;
+            background: linear-gradient(180deg, #f8fafc 0%, #ede9fe 50%, #f8fafc 100%);
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 2.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+        }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: #6c5ce7;
+        }
+        .subtitle {
+            color: #556373;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+        h2 {
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: #1a1145;
+            border-bottom: 2px solid #6c5ce7;
+            padding-bottom: 0.5rem;
+        }
+        .highlight {
+            background: #d4edda;
+            padding: 1.25rem;
+            border-radius: 0.5rem;
+            border-left: 4px solid #48bb78;
+            margin: 1.5rem 0;
+        }
+        .warning {
+            background: #fff3cd;
+            padding: 1.25rem;
+            border-radius: 0.5rem;
+            border-left: 4px solid #ffc107;
+            margin: 1.5rem 0;
+        }
+        .tier {
+            background: #f8fafc;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
+            border: 2px solid #e2e8f0;
+        }
+        .tier h3 {
+            color: #6c5ce7;
+            margin-bottom: 0.75rem;
+        }
+        .price-breakdown {
+            display: flex;
+            justify-content: space-between;
+            background: white;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin: 0.75rem 0;
+            border: 1px solid #e2e8f0;
+        }
+        .price-breakdown strong {
+            color: #6c5ce7;
+            font-size: 1.1rem;
+        }
+        ul {
+            margin: 1rem 0 1rem 1.5rem;
+        }
+        li {
+            margin-bottom: 0.5rem;
+        }
+        strong {
+            color: #1a1145;
+        }
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .comparison-item {
+            padding: 1rem;
+            border-radius: 0.5rem;
+            text-align: center;
+        }
+        .old {
+            background: #fee;
+            border: 2px solid #f44;
+        }
+        .new {
+            background: #efe;
+            border: 2px solid #4a4;
+        }
+        .footer {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e2e8f0;
+            text-align: center;
+            color: #556373;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem 0.5rem;
+            }
+            .container {
+                padding: 1.5rem;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+            .comparison {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 Гибридная Модель Ценообразования</h1>
+        <p class="subtitle">Прозрачная структура: разовая настройка + ежемесячная подписка</p>
+
+        <div class="highlight">
+            <strong>🎉 Почему мы перешли на гибридную модель?</strong>
+            <p>После анализа конкурентов в Казахстане обнаружили <strong>гигантский ценовой разрыв</strong>:</p>
+            <ul style="margin-top: 0.75rem;">
+                <li><strong>shai.pro (enterprise):</strong> 1.9M-4.8M KZT/мес</li>
+                <li><strong>Международные чатботы:</strong> 80-200K KZT/мес</li>
+                <li><strong>Наша зона:</strong> 30-60K KZT/мес + разовая настройка</li>
+            </ul>
+            <p style="margin-top: 0.75rem;">Гибридная модель отражает реальную стоимость владения и даёт клиентам полный контроль над расходами.</p>
+        </div>
+
+        <h2>💰 Новая Структура Цен</h2>
+
+        <div class="tier">
+            <h3>📦 Стартовый</h3>
+            <div class="price-breakdown">
+                <span>Настройка:</span>
+                <strong>100,000₸</strong>
+            </div>
+            <div class="price-breakdown">
+                <span>Ежемесячно:</span>
+                <strong>30,000₸</strong>
+            </div>
+            <p><strong>Для кого:</strong> микробизнес, фрилансеры, первый эксперимент</p>
+            <p><strong>Что входит:</strong> 1 канал, базовая настройка, VPS хостинг, техподдержка</p>
+        </div>
+
+        <div class="tier" style="border-color: #6c5ce7; background: #f5f3ff;">
+            <h3>🚀 Бизнес (Рекомендуем)</h3>
+            <div class="price-breakdown">
+                <span>Настройка:</span>
+                <strong>200,000₸</strong>
+            </div>
+            <div class="price-breakdown">
+                <span>Ежемесячно:</span>
+                <strong>50,000₸</strong>
+            </div>
+            <p><strong>Для кого:</strong> малый бизнес, агентства, отделы продаж</p>
+            <p><strong>Что входит:</strong> 2-3 канала, интеграции (1C, Kaspi, CRM), кастомизация, приоритетная поддержка 24/7</p>
+        </div>
+
+        <div class="tier">
+            <h3>🏢 Энтерпрайз</h3>
+            <div class="price-breakdown">
+                <span>Настройка:</span>
+                <strong>от 300,000₸</strong>
+            </div>
+            <div class="price-breakdown">
+                <span>Годовой договор:</span>
+                <strong>от 10M₸/год</strong>
+            </div>
+            <p><strong>Для кого:</strong> квазигосы, банки, крупный ритейл</p>
+            <p><strong>Что входит:</strong> on-premise, data residency, SLA, dedicated support, Cyber Shield compliance</p>
+        </div>
+
+        <h2>🔍 Что Входит в Ежемесячную Подписку</h2>
+        <ul>
+            <li><strong>Хостинг VPS:</strong> выделенный сервер для вашего AI-ассистента (4-8GB RAM, SSD)</li>
+            <li><strong>API-расходы:</strong> работа с AI-моделями (OpenAI, Anthropic, локальные модели)</li>
+            <li><strong>Техподдержка:</strong> оперативное решение проблем и консультации</li>
+            <li><strong>Обновления:</strong> новые функции и улучшения безопасности</li>
+            <li><strong>Мониторинг 24/7:</strong> отслеживание работоспособности системы</li>
+        </ul>
+
+        <div class="warning">
+            <strong>⚠️ Почему не разовая цена?</strong>
+            <p>OpenClaw — это не статичный скрипт, а живая система, которая требует:</p>
+            <ul style="margin-top: 0.5rem;">
+                <li>Постоянного хостинга (VPS ~10-30$/мес)</li>
+                <li>API-вызовов к AI-моделям (~5-50$/мес в зависимости от нагрузки)</li>
+                <li>Обновлений и поддержки</li>
+            </ul>
+            <p style="margin-top: 0.75rem;">Разовая цена скрывает эти расходы и создаёт ложные ожидания. Гибридная модель — честнее.</p>
+        </div>
+
+        <h2>📊 Сравнение с Конкурентами</h2>
+        <div class="comparison">
+            <div class="comparison-item old">
+                <strong style="color: #c00;">shai.pro Enterprise</strong>
+                <p style="margin-top: 0.5rem; font-size: 1.5rem; font-weight: bold;">1.9M₸/мес</p>
+                <p style="font-size: 0.9rem; color: #666;">За 3 агента</p>
+            </div>
+            <div class="comparison-item new">
+                <strong style="color: #080;">OpenClaw Бизнес</strong>
+                <p style="margin-top: 0.5rem; font-size: 1.5rem; font-weight: bold;">50K₸/мес</p>
+                <p style="font-size: 0.9rem; color: #666;">+ 200K setup</p>
+            </div>
+        </div>
+        <p style="text-align: center; color: #6c5ce7; font-weight: bold; font-size: 1.1rem;">
+            ⚡ Экономия: 1.85M₸/мес (97% дешевле)
+        </p>
+
+        <h2>✅ Гарантия Результата</h2>
+        <div class="highlight">
+            <p>Если через 3 месяца регулярного использования результат не соответствует ожиданиям — <strong>возвращаем 50% стоимости setup-платежа</strong>.</p>
+            <p style="margin-top: 0.75rem;">Перед стартом обговариваем конкретные метрики эффекта (время экономии, кол-во лидов, % автоматизации).</p>
+        </div>
+
+        <h2>🎯 Следующие Шаги</h2>
+        <ol>
+            <li><strong>Бесплатная консультация (30 мин):</strong> разбираем ваши процессы</li>
+            <li><strong>Демо решения:</strong> показываем как это будет работать у вас</li>
+            <li><strong>Предложение с ценой:</strong> фиксируем объём работ</li>
+            <li><strong>50% предоплата:</strong> начало настройки</li>
+            <li><strong>Разработка + тестирование:</strong> 1-4 недели</li>
+            <li><strong>50% финальный платёж:</strong> после запуска</li>
+            <li><strong>Подписка активируется:</strong> ежемесячный платёж начинается</li>
+        </ol>
+
+        <div class="highlight" style="margin-top: 2rem; background: #e0e7ff; border-color: #6c5ce7;">
+            <p style="text-align: center; font-size: 1.1rem;">
+                <strong>📱 Готовы обсудить ваш проект?</strong>
+            </p>
+            <p style="text-align: center; margin-top: 0.5rem;">
+                Telegram: <a href="https://t.me/adntgv" style="color: #6c5ce7; font-weight: bold;">@adntgv</a><br>
+                Email: <a href="mailto:aidyn.torgayev@gmail.com" style="color: #6c5ce7; font-weight: bold;">aidyn.torgayev@gmail.com</a>
+            </p>
+        </div>
+
+        <div class="footer">
+            <p>Обновлено: 24 марта 2026</p>
+            <p>OpenClaw Services — AI-автоматизация для бизнеса в Казахстане</p>
+            <p><a href="https://openclaw.adntgv.com" style="color: #6c5ce7;">openclaw.adntgv.com</a></p>
+        </div>
+    </div>
+</body>
+</html>
